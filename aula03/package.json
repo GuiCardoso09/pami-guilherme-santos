@@ -1,0 +1,21 @@
+{
+  "name": "pami-guilherme-santos",
+  "version": "1.0.0",
+  "description": "Programação de Aplicativos Mobile I com o professor João Siles",
+  "main": "teste.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GuiCardoso09/pami-guilherme-santos.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/GuiCardoso09/pami-guilherme-santos/issues"
+  },
+  "homepage": "https://github.com/GuiCardoso09/pami-guilherme-santos#readme"
+}
