@@ -1,10 +1,10 @@
 let cidades: string[] = [
     'São Paulo',
     'Rio de Janeiro',
-    'Curitiba',
+    'Belém',
     'Salvador',
-    'Belo Horizonte'
-];
+    'Botelhos'
+]; //pode ser escrito numa única linha
 
 function listarCidades(cidades: string[]): void {
     cidades.forEach((cidade) => {

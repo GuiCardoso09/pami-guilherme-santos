@@ -5,7 +5,7 @@ let estAtivo: boolean  = true;
 //Arrays
 let numeros: number[] = [1,2,3,4,5];
 let nomes: string[] = ['Ana', 'Bruno', 'Caio'];
-let misto: (string | number)[] = ['Ana', 25, 'Caio', 30];
+let misto: (string | number)[] = ['Ana', 25, 'Caio', 30]; //Os numeros e nomes estão em casas separadas. O que vale é a ,
 let misto2: Array<string|number> = ['Ana', 25, 'Caio', 30];
 
 //Tuplas
@@ -19,7 +19,7 @@ id = 'ABC123';
 interface Usuario {
     nome: string;
     idade: number;
-    email?: string; //Opcional
+    email?: string; //?: Opcional
 }
 
 //utilizar elas fica assim:

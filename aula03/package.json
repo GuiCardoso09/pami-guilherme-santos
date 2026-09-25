@@ -2,7 +2,7 @@
   "name": "pami-guilherme-santos",
   "version": "1.0.0",
   "description": "Programação de Aplicativos Mobile I com o professor João Siles",
-  "main": "teste.js",
+  "main": "declaracoes.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,7 +11,7 @@
     "url": "git+https://github.com/GuiCardoso09/pami-guilherme-santos.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Guilherme",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
