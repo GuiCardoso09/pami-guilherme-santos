@@ -1,31 +1,55 @@
-import { Link } from 'expo-router';
-import { StyleSheet, Text, View } from "react-native";
-{/*Importação de componente de expo-router*/}
+import { useState } from 'react';
+import { Platform, View, StyleSheet } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import * as ImagePicker from 'expo-image-picker';
+
+import Button from '@/components/button';
+import ImageViewer from '@/components/image-viewer';
+
+const PlaceholderImage = require('@/assets/images/background-image.png');
 
 export default function Index() {
+  const [selectedImage, setSelectedImage] = useState<string | undefined>(undefined);
+
+  const pickImageAsync = async () => {
+    const result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ['images'],
+      allowsEditing: true,
+      quality: 1,
+    });
+
+    if (!result.canceled) {
+      setSelectedImage(result.assets[0].uri);
+    } else {
+      alert('You did not select any image.');
+    }
+  };
+
   return (
-    <View style={styles.container}>
-      <Text>Edit src/app/index.tsx to edit this screen.</Text>
-      <Link href="/about" style={styles.button}>{/* Texto de exibição*/}
-        Go to About screen
-        </Link>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.imageContainer}>
+        <ImageViewer imgSource={PlaceholderImage} selectedImage={selectedImage} />
+      </View>
+      <View style={styles.footerContainer}>
+        <Button theme="primary" label="Choose a photo" onPress={pickImageAsync} />
+        <Button label="Use this photo" onPress={() => alert('You pressed a button.')} />
+      </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-     backgroundColor: '#ffffff',
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: '#25292e',
+    alignItems: 'center',
   },
-   text: {
-    color: '#000000',
+  imageContainer: {
+    flex: 1,
+    paddingTop: Platform.select({ web: 96, default: 20 }),
   },
- button: { 
-    fontSize: 20,
-    textDecorationLine: 'underline',
-    color: '#181717',
-  },  
-});{/* Adição de style do botão de troca de telas*/}
+  footerContainer: {
+    flex: 1 / 3,
+    alignItems: 'center',
+  },
+});
